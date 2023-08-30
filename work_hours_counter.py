@@ -25,10 +25,19 @@ def print_working_hours_stat(path_to_file: Path) -> None:
             print("{}: {}; sum: {}".format(name, ", ".join(map(str, list_of_hours)), sum(list_of_hours)))
 
 
-if __name__ == '__main__':
+def get_args():
+    """
+    Получает аргументы
+
+    :return:
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--path_to_file", type=str, help="Path to file with data, format: 'name number_of_hours'")
     args = parser.parse_args()
+    return args
 
+
+if __name__ == '__main__':
+    args = get_args()
     path_to_file = Path(args.path_to_file)
     print_working_hours_stat(path_to_file)
