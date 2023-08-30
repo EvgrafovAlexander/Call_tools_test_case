@@ -29,7 +29,7 @@ def get_args():
     """
     Получает аргументы
 
-    :return:
+    :return: перечень аргументов
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--path_to_file", type=str, help="Path to file with data, format: 'name number_of_hours'")
